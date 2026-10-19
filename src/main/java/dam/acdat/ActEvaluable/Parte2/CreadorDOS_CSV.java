@@ -38,7 +38,7 @@ public class CreadorDOS_CSV {
                 dos.writeFloat((float) salario);
                 dos.writeChar((char) separador);
                 dos.writeBoolean((boolean) fijo);
-                dos.writeByte(Integer.parseInt(System.lineSeparator()));
+                dos.writeBytes(System.lineSeparator());
             }
         }catch (EOFException ex){
             System.out.println("Fin de la creacion del CSV");
