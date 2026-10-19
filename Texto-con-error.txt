@@ -1,0 +1,11 @@
+UD 02. Ficheros. ERROR
+Persistencia de datos en ficheros.
+Tipos de ficheros según su contenido.
+Codificación para texto.
+La clase File de Java. ERROR
+Gestión de excepciones en Java. ERROR
+Formas de acceso a los ficheros.
+Operaciones sobre ficheros con Java.
+Acceso secuencial a ficheros en Java. ERROR
+Operaciones con ficheros de acceso aleatorio en Java.
+Organizaciones de ficheros. ERROR
