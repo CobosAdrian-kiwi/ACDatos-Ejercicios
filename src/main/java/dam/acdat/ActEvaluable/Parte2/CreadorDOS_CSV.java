@@ -10,15 +10,15 @@ public class CreadorDOS_CSV {
         FileInputStream fis = null;
         DataInputStream dis = null;
 
-        FileWriter fw = null;
-        BufferedWriter bw = null;
+        FileOutputStream fos = null;
+        DataOutputStream dos = null;
 
         try {
             fis = new FileInputStream(DataOutputStreamResult);
             dis = new DataInputStream(fis);
 
-            fw = new FileWriter(new File("CSV-DataOutputStream.txt"));
-            bw = new BufferedWriter(fw);
+            fos = new FileOutputStream(new File("CSV-DataOutputStream.txt"));
+            dos = new DataOutputStream(fos);
 
             System.out.println("DATOS----------------");
 
@@ -27,10 +27,18 @@ public class CreadorDOS_CSV {
                 String dni = dis.readUTF();
                 String nombre = dis.readUTF();
                 float salario = dis.readFloat();
-                Integer fijoI = (dis.readBoolean() == true) ? 1 : 0;
+                boolean fijo = dis.readBoolean();
 
-                bw.write(""+ cod + separador + dni + separador + nombre + separador + salario + separador + fijoI);
-                bw.newLine();
+                dos.writeInt((Integer) cod);
+                dos.writeChar((char) separador);
+                dos.writeUTF((String) dni);
+                dos.writeChar((char) separador);
+                dos.writeUTF((String) nombre);
+                dos.writeChar((char) separador);
+                dos.writeFloat((float) salario);
+                dos.writeChar((char) separador);
+                dos.writeBoolean((boolean) fijo);
+                dos.writeByte(Integer.parseInt(System.lineSeparator()));
             }
         }catch (EOFException ex){
             System.out.println("Fin de la creacion del CSV");
@@ -40,13 +48,13 @@ public class CreadorDOS_CSV {
             throw new RuntimeException(e);
         }finally {
             try {
-                bw.close();
+                dos.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
 
             try {
-                fw.close();
+                fos.close();
             } catch (IOException e) {
                 throw new RuntimeException(e);
             }
