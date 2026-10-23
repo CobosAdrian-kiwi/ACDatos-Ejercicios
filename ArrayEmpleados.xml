@@ -1,0 +1,28 @@
+<empleados-array>
+  <empleados>
+    <codEmpleado>1</codEmpleado>
+    <dNI>1111111A</dNI>
+    <nombre>Pepe</nombre>
+    <salarioBrut>1200.0</salarioBrut>
+    <fijo>true</fijo>
+  </empleados>
+  <empleados>
+    <codEmpleado>2</codEmpleado>
+    <nombre>Pepa</nombre>
+    <salarioBrut>1300.0</salarioBrut>
+    <fijo>true</fijo>
+  </empleados>
+  <empleados>
+    <codEmpleado>3</codEmpleado>
+    <dNI>3333333C</dNI>
+    <nombre>Pepito</nombre>
+    <salarioBrut>800.0</salarioBrut>
+    <fijo>false</fijo>
+  </empleados>
+  <empleados>
+    <codEmpleado>4</codEmpleado>
+    <dNI>4444444D</dNI>
+    <salarioBrut>1200.0</salarioBrut>
+    <fijo>false</fijo>
+  </empleados>
+</empleados-array>

@@ -24,7 +24,7 @@ public class SerializacionXML {
         Empleados empleado1 = new Empleados(1, "1111111A", "Kiwi", 100.0F, true);
 
         XStream xstream = new XStream();
-        xstream.alias("producto", Empleados.class);
+        xstream.alias("empleado", Empleados.class);
 
         FileWriter fw = null;
         try {
