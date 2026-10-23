@@ -1,0 +1,7 @@
+<producto>
+  <codEmpleado>1</codEmpleado>
+  <dNI>1111111A</dNI>
+  <nombre>Kiwi</nombre>
+  <salarioBrut>100.0</salarioBrut>
+  <fijo>true</fijo>
+</producto>
