@@ -1,0 +1,8 @@
+1001;Ana López;Teclado;2;25.50;true
+1002;Luis Pérez;Monitor;1;189.99;false
+1003;María García;Ratón;3;12.75;true
+1004;Pedro Ruiz;Impresora;1;85.00;false
+1005;Laura Martín;Disco SSD;2;79.95;true
+1006;Carlos Díaz;Webcam;1;45.50;false
+1007;Elena Torres;Memoria RAM;4;39.90;true
+1008;David Romero;Portátil;1;799.99;false

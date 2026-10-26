@@ -1,0 +1,66 @@
+<list>
+  <pedidos>
+    <codigo>1001</codigo>
+    <nombre>Ana López</nombre>
+    <producto>Teclado</producto>
+    <uds>2</uds>
+    <precio>25.5</precio>
+    <urgente>true</urgente>
+  </pedidos>
+  <pedidos>
+    <codigo>1002</codigo>
+    <nombre>Luis Pérez</nombre>
+    <producto>Monitor</producto>
+    <uds>1</uds>
+    <precio>189.99</precio>
+    <urgente>false</urgente>
+  </pedidos>
+  <pedidos>
+    <codigo>1003</codigo>
+    <nombre>María García</nombre>
+    <producto>Ratón</producto>
+    <uds>3</uds>
+    <precio>12.75</precio>
+    <urgente>true</urgente>
+  </pedidos>
+  <pedidos>
+    <codigo>1004</codigo>
+    <nombre>Pedro Ruiz</nombre>
+    <producto>Impresora</producto>
+    <uds>1</uds>
+    <precio>85.0</precio>
+    <urgente>false</urgente>
+  </pedidos>
+  <pedidos>
+    <codigo>1005</codigo>
+    <nombre>Laura Martín</nombre>
+    <producto>Disco SSD</producto>
+    <uds>2</uds>
+    <precio>79.95</precio>
+    <urgente>true</urgente>
+  </pedidos>
+  <pedidos>
+    <codigo>1006</codigo>
+    <nombre>Carlos Díaz</nombre>
+    <producto>Webcam</producto>
+    <uds>1</uds>
+    <precio>45.5</precio>
+    <urgente>false</urgente>
+  </pedidos>
+  <pedidos>
+    <codigo>1007</codigo>
+    <nombre>Elena Torres</nombre>
+    <producto>Memoria RAM</producto>
+    <uds>4</uds>
+    <precio>39.9</precio>
+    <urgente>true</urgente>
+  </pedidos>
+  <pedidos>
+    <codigo>1008</codigo>
+    <nombre>David Romero</nombre>
+    <producto>Portátil</producto>
+    <uds>1</uds>
+    <precio>799.99</precio>
+    <urgente>false</urgente>
+  </pedidos>
+</list>
