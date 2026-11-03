@@ -1,13 +1,15 @@
 package dam.acdat.ActEvaluable;
 
-public class Empleados {
+import java.io.Serializable;
+
+public class Empleado implements Serializable {
     private Integer codEmpleado;
     private String dNI;
     private String nombre;
     private Float salarioBrut;
     private Boolean fijo;
 
-    public Empleados(int codEmpleado, String DNI, String nombre, float salarioBrut, boolean fijo) {
+    public Empleado(int codEmpleado, String DNI, String nombre, float salarioBrut, boolean fijo) {
         this.codEmpleado = codEmpleado;
         this.dNI = DNI;
         this.nombre = nombre;
@@ -25,7 +27,7 @@ public class Empleados {
     }
 
     public void setCodEmpleado(int codEmpleado) {
-        codEmpleado = codEmpleado;
+        this.codEmpleado = codEmpleado;
     }
 
     public String getNombre() {
@@ -34,7 +36,7 @@ public class Empleados {
 
 
     public void setNombre(String nombre) {
-        nombre = nombre;
+        this.nombre = nombre;
     }
 
     public String getDNI() {

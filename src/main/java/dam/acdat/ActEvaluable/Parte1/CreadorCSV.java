@@ -1,6 +1,6 @@
 package dam.acdat.ActEvaluable.Parte1;
 
-import dam.acdat.ActEvaluable.Empleados;
+import dam.acdat.ActEvaluable.Empleado;
 
 import java.io.*;
 
@@ -9,12 +9,12 @@ public class CreadorCSV {
         File CSVParte1 = new File("CSV-Parte1.txt");
         char separador = ';';
 
-        Empleados[] empleados = new Empleados[4];
+        Empleado[] empleados = new Empleado[4];
 
-        empleados[0] = new Empleados(01, "1111111A", "Pepe", 1200.0F, true);
-        empleados[1] = new Empleados(02, null, "Pepa", 1300.0F, true);
-        empleados[2] = new Empleados(03, "3333333C", "Pepito", 800.0F, false);
-        empleados[3] = new Empleados(04, "4444444D", null, 1200.0F, false);
+        empleados[0] = new Empleado(01, "1111111A", "Pepe", 1200.0F, true);
+        empleados[1] = new Empleado(02, null, "Pepa", 1300.0F, true);
+        empleados[2] = new Empleado(03, "3333333C", "Pepito", 800.0F, false);
+        empleados[3] = new Empleado(04, "4444444D", null, 1200.0F, false);
 
 
         FileWriter fw = null;
@@ -26,7 +26,7 @@ public class CreadorCSV {
             writer = new BufferedWriter(fw);
 
             String linea;
-            for (Empleados empleado : empleados){
+            for (Empleado empleado : empleados){
                 String cod = empleado.getCodEmpleadoString();
                 String DNI = empleado.getDNI();
                 String nombre = empleado.getNombre();

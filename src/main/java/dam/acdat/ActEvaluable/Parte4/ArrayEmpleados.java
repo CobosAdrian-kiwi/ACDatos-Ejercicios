@@ -12,7 +12,7 @@ con valor nulo.
  */
 
 import com.thoughtworks.xstream.XStream;
-import dam.acdat.ActEvaluable.Empleados;
+import dam.acdat.ActEvaluable.Empleado;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -21,15 +21,15 @@ import java.io.IOException;
 public class ArrayEmpleados {
     public static void main(String[] args) {
 
-        Empleados[] empleados = new Empleados[4];
+        Empleado[] empleados = new Empleado[4];
 
-        empleados[0] = new Empleados(01, "1111111A", "Pepe", 1200.0F, true);
-        empleados[1] = new Empleados(02, null, "Pepa", 1300.0F, true);
-        empleados[2] = new Empleados(03, "3333333C", "Pepito", 800.0F, false);
-        empleados[3] = new Empleados(04, "4444444D", null, 1200.0F, false);
+        empleados[0] = new Empleado(01, "1111111A", "Pepe", 1200.0F, true);
+        empleados[1] = new Empleado(02, null, "Pepa", 1300.0F, true);
+        empleados[2] = new Empleado(03, "3333333C", "Pepito", 800.0F, false);
+        empleados[3] = new Empleado(04, "4444444D", null, 1200.0F, false);
 
         XStream xstream = new XStream();
-        xstream.alias("empleados", Empleados.class);
+        xstream.alias("empleados", Empleado.class);
 
         FileWriter fw = null;
         try{

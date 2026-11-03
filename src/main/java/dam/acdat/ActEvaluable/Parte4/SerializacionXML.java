@@ -7,11 +7,9 @@ para los ejercicios anteriores. El nombre del tag o
 etiqueta que engloba todo el documento debe ser empleado.
  */
 
-import dam.acdat.ActEvaluable.Empleados;
+import dam.acdat.ActEvaluable.Empleado;
 
 import com.thoughtworks.xstream.XStream;
-import com.thoughtworks.xstream.io.xml.StaxDriver;
-import com.thoughtworks.xstream.security.NoTypePermission;
 
 import java.io.File;
 import java.io.FileWriter;
@@ -21,10 +19,10 @@ import java.io.IOException;
 public class SerializacionXML {
     public static void main(String[] args) {
 
-        Empleados empleado1 = new Empleados(1, "1111111A", "Kiwi", 100.0F, true);
+        Empleado empleado1 = new Empleado(1, "1111111A", "Kiwi", 100.0F, true);
 
         XStream xstream = new XStream();
-        xstream.alias("empleado", Empleados.class);
+        xstream.alias("empleado", Empleado.class);
 
         FileWriter fw = null;
         try {

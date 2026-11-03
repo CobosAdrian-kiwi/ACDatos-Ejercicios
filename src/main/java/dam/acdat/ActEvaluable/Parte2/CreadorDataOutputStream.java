@@ -1,6 +1,6 @@
 package dam.acdat.ActEvaluable.Parte2;
 
-import dam.acdat.ActEvaluable.Empleados;
+import dam.acdat.ActEvaluable.Empleado;
 
 import java.io.*;
 
@@ -11,18 +11,18 @@ public class CreadorDataOutputStream {
         FileOutputStream fos = null;
         DataOutputStream dos = null;
 
-        Empleados[] empleados = new Empleados[4];
+        Empleado[] empleados = new Empleado[4];
 
-        empleados[0] = new Empleados(01, "1111111A", "Pepe", 1200.0F, true);
-        empleados[1] = new Empleados(02, null, "Pepa", 1300.0F, true);
-        empleados[2] = new Empleados(03, "3333333C", "Pepito", 800.0F, false);
-        empleados[3] = new Empleados(04, "4444444D", null, 1200.0F, false);
+        empleados[0] = new Empleado(01, "1111111A", "Pepe", 1200.0F, true);
+        empleados[1] = new Empleado(02, null, "Pepa", 1300.0F, true);
+        empleados[2] = new Empleado(03, "3333333C", "Pepito", 800.0F, false);
+        empleados[3] = new Empleado(04, "4444444D", null, 1200.0F, false);
 
         try {
             fos = new FileOutputStream(DataOutputStreamResult);
             dos = new DataOutputStream(fos);
 
-            for (Empleados emp : empleados){
+            for (Empleado emp : empleados){
                 dos.writeInt(emp.getCodEmpleado());
                 dos.writeUTF(emp.getDNI() != null ? emp.getDNI() : "");
                 dos.writeUTF(emp.getNombre() != null ? emp.getNombre() : "");
