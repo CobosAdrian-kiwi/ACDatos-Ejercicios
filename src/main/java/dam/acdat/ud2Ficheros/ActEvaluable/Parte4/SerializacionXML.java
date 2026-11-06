@@ -1,4 +1,4 @@
-package dam.acdat.ActEvaluable.Parte4;
+package dam.acdat.ud2Ficheros.ActEvaluable.Parte4;
 
 /*
 Crea un programa que serialice en un fichero en
@@ -7,7 +7,7 @@ para los ejercicios anteriores. El nombre del tag o
 etiqueta que engloba todo el documento debe ser empleado.
  */
 
-import dam.acdat.ActEvaluable.Empleado;
+import dam.acdat.ud2Ficheros.ActEvaluable.Empleado;
 
 import com.thoughtworks.xstream.XStream;
 

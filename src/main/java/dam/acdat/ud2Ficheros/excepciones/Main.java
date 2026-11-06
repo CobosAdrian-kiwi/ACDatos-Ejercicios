@@ -1,4 +1,4 @@
-package dam.acdat.excepciones;
+package dam.acdat.ud2Ficheros.excepciones;
 
 
 public class Main {

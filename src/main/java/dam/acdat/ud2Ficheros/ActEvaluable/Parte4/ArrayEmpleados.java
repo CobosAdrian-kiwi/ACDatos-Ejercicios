@@ -1,4 +1,4 @@
-package dam.acdat.ActEvaluable.Parte4;
+package dam.acdat.ud2Ficheros.ActEvaluable.Parte4;
 
 /*
 Crea un programa que cree en memoria un array Empleado[]
@@ -12,7 +12,7 @@ con valor nulo.
  */
 
 import com.thoughtworks.xstream.XStream;
-import dam.acdat.ActEvaluable.Empleado;
+import dam.acdat.ud2Ficheros.ActEvaluable.Empleado;
 
 import java.io.File;
 import java.io.FileWriter;

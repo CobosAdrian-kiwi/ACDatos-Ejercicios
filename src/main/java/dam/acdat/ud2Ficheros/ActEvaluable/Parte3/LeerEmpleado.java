@@ -1,6 +1,6 @@
-package dam.acdat.ActEvaluable.Parte3;
+package dam.acdat.ud2Ficheros.ActEvaluable.Parte3;
 
-import dam.acdat.ActEvaluable.Empleado;
+import dam.acdat.ud2Ficheros.ActEvaluable.Empleado;
 
 import java.io.EOFException;
 import java.io.FileInputStream;

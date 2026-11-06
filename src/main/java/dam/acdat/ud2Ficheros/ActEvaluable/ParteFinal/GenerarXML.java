@@ -1,4 +1,4 @@
-package dam.acdat.ActEvaluable.ParteFinal;
+package dam.acdat.ud2Ficheros.ActEvaluable.ParteFinal;
 
 /*
 ********************************************************
@@ -25,7 +25,7 @@ El XML deberá presentar una estructura similar a la siguiente:
  */
 
 import com.thoughtworks.xstream.XStream;
-import dam.acdat.ActEvaluable.Pedidos;
+import dam.acdat.ud2Ficheros.ActEvaluable.Pedidos;
 
 import java.io.*;
 import java.util.ArrayList;

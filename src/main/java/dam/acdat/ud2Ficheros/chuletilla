@@ -1,0 +1,33 @@
+               ┌── 1. Comprobar / Crear / Borrar rutas y archivos ─► File
+               │    └─► File f = new File("ruta.txt");
+               │
+               ├── 2. Leer Texto / CSV línea a línea ─────────────► BufferedReader
+               │    └─► BufferedReader br = new BufferedReader(new FileReader(f));
+               │
+               ├── 3. Escribir Texto / CSV línea a línea ──────────► BufferedWriter
+               │    └─► BufferedWriter bw = new BufferedWriter(new FileWriter(f, true));
+               │
+               ├── 4. Escribir Datos Primitivos (int, double...) ──► DataOutputStream
+¿Qué te pide   │    └─► DataOutputStream dos = new DataOutputStream(new FileOutputStream(f));
+el ejercicio? ─┤
+               ├── 5. Leer Datos Primitivos (int, double...) ────► DataInputStream
+               │    └─► DataInputStream dis = new DataInputStream(new FileInputStream(f));
+               │
+               ├── 6. Escribir Objetos Complejos (Serializable) ──► ObjectOutputStream
+               │    └─► ObjectOutputStream oos = new ObjectOutputStream(new FileOutputStream(f));
+               │
+               ├── 7. Leer Objetos Complejos (Serializable) ────► ObjectInputStream
+               │    └─► ObjectInputStream ois = new ObjectInputStream(new FileInputStream(f));
+               │
+               ├── 8. Exportar Objetos a XML ─────────────────────► XStream + PrintWriter
+               │    └─► PrintWriter pw = new PrintWriter(new FileWriter(f));
+               │
+               └── 9. Importar Objetos desde XML ─────────────────► XStream
+                    └─► XStream xstream = new XStream();
+
+└
+└
+─
+─
+│
+│

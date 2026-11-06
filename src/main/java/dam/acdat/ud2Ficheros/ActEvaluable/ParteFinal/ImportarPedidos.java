@@ -1,4 +1,4 @@
-package dam.acdat.ActEvaluable.ParteFinal;
+package dam.acdat.ud2Ficheros.ActEvaluable.ParteFinal;
 
 /*
 
@@ -16,7 +16,7 @@ Desarrolla una clase ejecutable denominada ImportarPedidos que:
 Importante: Los campos numéricos y booleanos deben almacenarse en sus tipos correspondientes.
  */
 
-import dam.acdat.ActEvaluable.Pedidos;
+import dam.acdat.ud2Ficheros.ActEvaluable.Pedidos;
 
 import java.io.*;
 import java.util.ArrayList;

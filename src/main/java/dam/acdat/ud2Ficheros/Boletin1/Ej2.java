@@ -1,4 +1,4 @@
-package dam.acdat;
+package dam.acdat.ud2Ficheros.Boletin1;
 
 import java.io.File;
 import java.util.Date;

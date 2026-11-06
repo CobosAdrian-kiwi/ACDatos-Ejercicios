@@ -1,6 +1,6 @@
-package dam.acdat.ActEvaluable.Parte1;
+package dam.acdat.ud2Ficheros.ActEvaluable.Parte1;
 
-import dam.acdat.ActEvaluable.Empleado;
+import dam.acdat.ud2Ficheros.ActEvaluable.Empleado;
 
 import java.io.*;
 
