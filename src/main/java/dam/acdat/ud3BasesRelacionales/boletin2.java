@@ -1,6 +1,7 @@
 package dam.acdat.ud3BasesRelacionales;
 
 import java.sql.*;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -16,16 +17,18 @@ public class boletin2 {
 
         //Listas de tablas
         List<Libro> libros = new ArrayList<>(List.of()); //libros
+        List<String> libros_autores = new ArrayList<>(List.of()); //conexion libros y autores
+        List<Autor> autores = new ArrayList<>(List.of()); //autores
 
         try (Connection conexion = DriverManager.getConnection(url, usuario, pass)){
 
             System.out.println("conexion establecida");
 
             //LIBROS
-            String sentencia = "SELECT * FROM libros ORDER BY id_libro";
+            String sentenciaLibros = "SELECT * FROM libros ORDER BY id_libro";
 
 
-            try (Statement st = conexion.createStatement(); ResultSet rs = st.executeQuery(sentencia)){
+            try (Statement st = conexion.createStatement(); ResultSet rs = st.executeQuery(sentenciaLibros)){
 
                 while (rs.next()){
                     Integer id = rs.getInt("id_libro");
@@ -47,6 +50,39 @@ public class boletin2 {
                 throw new RuntimeException(e);
             }
 
+            String sentenciaLibrosAutores = "SELECT * FROM libros_autores ORDER BY id_libro";
+
+            try (Statement st = conexion.createStatement(); ResultSet rs = st.executeQuery(sentenciaLibrosAutores)){
+
+                while (rs.next()){
+                    Integer id_libro = rs.getInt("id_libro");
+                    Integer id_autor = rs.getInt("id_autor");
+
+                    String libroAut = id_libro+";"+id_autor;
+                    libros_autores.add(libroAut);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+            String sentenciaAutores = "SELECT * FROM autores ORDER BY id_autor";
+
+            try (Statement st = conexion.createStatement(); ResultSet rs = st.executeQuery(sentenciaAutores)){
+
+                while (rs.next()){
+                    Integer id = rs.getInt("id_autor");
+                    String nombre = rs.getString("nombre");
+                    String nacionalidad = rs.getString("nacionalidad");
+                    LocalDate fecha_nacimiento = rs.getDate("fecha_nacimiento").toLocalDate();
+
+                    Autor autor = new Autor(id, nombre, nacionalidad, fecha_nacimiento);
+                    autores.add(autor);
+                }
+            } catch (SQLException e) {
+                throw new RuntimeException(e);
+            }
+
+
 
         } catch (SQLException e) {
             System.err.println(e.getMessage());
@@ -55,7 +91,8 @@ public class boletin2 {
 
         //Menu de seleccion
         int opcionUsu = 9;
-        Integer consultaLibroUsu;
+        int consultaLibroUsu;
+        int consultaAutorLibro;
 
 
         while (true){
@@ -76,7 +113,7 @@ public class boletin2 {
                 case 1:
                     System.out.println("\n CATALOGO DE LIBROS:");
                     consultarLibros(libros);
-
+                    break;
                 case 2:
                     System.out.println("\n Introduce el identificador del libro a consultar: ");
                     consultaLibroUsu = sc.nextInt();
@@ -92,9 +129,27 @@ public class boletin2 {
                     }
 
                     if (!libroEncontrado){
-                        System.out.println("No hay libros con el id introducido");
+                        System.out.println("No hay libros con el id introducido \n");
                     }
+                    break;
                 case 3:
+                    System.out.println("\n Introduce el identificador del libro a buscar sus autores: ");
+                    consultaAutorLibro = sc.nextInt();
+
+                    boolean libro2Encontrado = false;
+
+                    for (Libro libro : libros){
+                        if (libro.getId() == consultaAutorLibro){
+                            consultarAutores(libro, libros_autores, autores);
+                            libro2Encontrado = true;
+                            break;
+                        }
+                    }
+
+                    if (!libro2Encontrado){
+                        System.out.println("No hay libros con el id introducido \n");
+                    }
+
                     break;
                 case 4:
                     break;
@@ -118,11 +173,32 @@ public class boletin2 {
         for (Libro libro : libros){
             System.out.println(libro.toString() + ((libro.getEditorial() != null) ? (" | Editorial: " + libro.getEditorial()) : " | Sin editorial"));
         }
+        System.out.println();
     }
 
     private static void consultarLibros(Libro libro) {
         System.out.println(libro.getTitulo() + " | ISBN: "
                 + libro.getIsbn() + " | Año de publicacion: " +  libro.getAnioPublicacion()+
-                ((libro.getDisponibles() == 0) ? " | No hay disponibles" : (" | Disponibles: " + libro.getDisponibles())));
+                ((libro.getDisponibles() == 0) ? " | No hay disponibles" : (" | Disponibles: " + libro.getDisponibles())) + "\n");
+    }
+
+    private static void consultarAutores(Libro libro, List<String> librosAutores, List<Autor> autores){
+        for (int i = 0; i < librosAutores.size(); i++) {
+
+            String[] partes = librosAutores.get(i).split(";");
+
+            if (libro.getId() == Integer.parseInt(partes[0])){
+
+                int id_autor = Integer.parseInt(partes[1]);
+
+                for (Autor autor : autores){
+                    if (autor.getId() == id_autor){
+                        System.out.println(autor.toString());
+                    }
+                }
+
+            }
+        }
+
     }
 }
