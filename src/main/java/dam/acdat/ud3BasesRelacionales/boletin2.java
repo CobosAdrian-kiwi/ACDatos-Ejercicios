@@ -95,7 +95,7 @@ public class boletin2 {
         int consultaAutorLibro;
 
 
-        while (true){
+        while (opcionUsu != 0){
             System.out.println("========= BIBLIOTECA =========");
             System.out.println("1. Listar el catálogo de libros\n" +
                     "2. Consultar un libro\n" +
